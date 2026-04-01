@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Clean Cuts Barbershop LA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+html{scroll-behavior:smooth;overflow-x:hidden;background:#0A0A0A;color:#F0EDE4}
+body{font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+:root{--blk:#0A0A0A;--blk2:#111111;--gold:#8B0000;--gold2:#A50000;--white:#F0EDE4;--gray:#888078;--gray2:#666058;--red:#8B0000;--red2:#A50000;--red3:#9B0000;
+  --border:rgba(139,0,0,0.2);--border2:rgba(139,0,0,0.08);--nav-h:76px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:var(--nav-h);padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.92);border-bottom:1px solid var(--border2);backdrop-filter:blur(24px)}
+.logo{display:flex;flex-direction:column;gap:1px;text-decoration:none}
+.logo-main{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;letter-spacing:1px;color:var(--white);line-height:1}
+.logo-main span{color:var(--red)}
+.logo-sub{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(--gray)}
+.nav-links{display:flex;gap:36px;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray);transition:color .25s;white-space:nowrap;text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--red)}
+.nav-cta{background:var(--red);color:var(--blk);padding:11px 26px;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:all .25s;white-space:nowrap;text-decoration:none}
+.nav-cta:hover{background:var(--red2)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:600}
+.hamburger span{width:24px;height:2px;background:var(--white);display:block;transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,0.98);z-index:550;flex-direction:column;align-items:center;justify-content:center}
+.mobile-menu.open{display:flex}
+.mobile-menu a{display:block;padding:18px 0;font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:4px;color:var(--gray);transition:color .2s;text-align:center;text-decoration:none}
+.mobile-menu a:hover{color:var(--red)}
+.mob-cta{background:var(--red)!important;color:var(--blk)!important;padding:16px 48px!important;margin-top:24px;font-size:14px!important}
+
+/* HERO VIDEO */
+.about-hero{position:relative;height:70vh;min-height:500px;display:flex;align-items:flex-end;overflow:hidden}
+.hero-vid{position:absolute;inset:0;z-index:0}
+.hero-vid video{width:100%;height:100%;object-fit:cover;filter:brightness(0.35)}
+.hero-vid-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,1) 0%,rgba(10,10,10,.3) 60%,transparent 100%);z-index:1}
+.about-hero-content{position:relative;z-index:2;padding:0 6% 60px;width:100%}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.eyebrow-line{width:32px;height:1px;background:var(–red)}
+.eyebrow-text{font-size:9px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(–red)}
+.hero-title{font-family:‘Playfair Display’,serif;font-size:clamp(48px,7vw,88px);font-weight:700;line-height:.9;letter-spacing:2px;color:var(–white)}
+.hero-title span{color:var(–red)}
+
+/* STORY */
+.story-section{padding:80px 6%}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.story-img{width:100%;height:540px;object-fit:cover;filter:grayscale(15%) contrast(1.1)}
+.story-body{font-size:15px;font-weight:300;color:var(–gray);line-height:1.95;margin-bottom:20px}
+.story-body strong{color:var(–white);font-weight:400}
+.story-title{font-family:‘Playfair Display’,serif;font-size:clamp(28px,4vw,52px);font-weight:700;letter-spacing:2px;color:var(–white);margin-bottom:20px;line-height:.95}
+.story-title span{color:var(–red)}
+
+/* VALUES */
+.values-section{padding:80px 6%;background:var(–blk2)}
+.sec-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.sec-eyebrow-line{width:32px;height:1px;background:var(–red)}
+.sec-eyebrow-text{font-size:9px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(–red)}
+.sec-title{font-family:‘Playfair Display’,serif;font-size:clamp(32px,4.5vw,60px);font-weight:700;line-height:.92;letter-spacing:2px;color:var(–white);margin-bottom:16px}
+.sec-title span{color:var(–red)}
+.sec-sub{font-size:15px;font-weight:300;color:var(–gray);max-width:520px;line-height:1.9;margin-bottom:60px}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–border2);border:1px solid var(–border2)}
+.value{background:var(–blk);padding:44px 36px;transition:background .3s}
+.value:hover{background:var(–blk2)}
+.value-icon{font-size:36px;margin-bottom:16px;display:block}
+.value-title{font-family:‘Inter’,sans-serif;font-size:18px;font-weight:700;color:var(–white);margin-bottom:10px}
+.value-desc{font-size:13px;color:var(–gray);line-height:1.8}
+
+/* INFO */
+.info-section{padding:80px 6%}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–border2);border:1px solid var(–border2)}
+.info-card{background:var(–blk);padding:44px 36px}
+.info-title{font-family:‘Bebas Neue’,sans-serif;font-size:22px;letter-spacing:3px;color:var(–red);margin-bottom:20px}
+.info-item{font-size:14px;color:var(–gray);margin-bottom:10px;line-height:1.6}
+.info-item strong{color:var(–white);display:block;font-weight:500;font-size:13px;letter-spacing:.5px;margin-bottom:2px}
+
+.cta-bar{background:var(–red);padding:48px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.cta-bar-text{font-family:‘Playfair Display’,serif;font-size:clamp(24px,3.5vw,44px);font-weight:700;letter-spacing:3px;color:var(–blk)}
+.btn-dark{background:var(–blk);color:var(–red);padding:14px 36px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all .3s}
+.btn-dark:hover{background:var(–blk2)}
+footer{background:#060606;border-top:1px solid var(–border2);padding:48px 6% 28px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.f-copy{font-size:11px;color:var(–gray2)}
+.f-pow a{font-size:11px;color:#666058;text-decoration:none}
+.f-pow a:hover{color:var(–red)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1100px){.nav-links{display:none}.story-grid{grid-template-columns:1fr;gap:48px}.story-img{height:380px}.values-grid{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}}
+@media(max-width:640px){nav{padding:0 5%}.hamburger{display:flex}}
+</style>
+
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><span class="logo-main">CLEAN <span>CUTS</span></span><span class="logo-sub">Barbershop · Los Angeles</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="team.html">Our Team</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="booking.html">Book Now</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+  </ul>
+  <a href="booking.html" class="nav-cta">Book Now</a>
+  <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="services.html" onclick="closeMob()">Services</a>
+  <a href="team.html" onclick="closeMob()">Our Team</a>
+  <a href="gallery.html" onclick="closeMob()">Gallery</a>
+  <a href="booking.html" onclick="closeMob()">Book Now</a>
+  <a href="about.html" onclick="closeMob()" class="mob-cta">About →</a>
+</div>
+
+<!-- HERO VIDEO -->
+
+<section class="about-hero">
+  <div class="hero-vid">
+    <video autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/7697073/7697073-hd_1920_1080_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-vid-overlay"></div>
+  </div>
+  <div class="about-hero-content">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Est. 2018 · Los Angeles</span></div>
+    <h1 class="hero-title">OUR<br><span>STORY.</span></h1>
+  </div>
+</section>
+
+<!-- STORY -->
+
+<section class="story-section">
+  <div class="story-grid reveal">
+    <div>
+      <h2 class="story-title">BUILT FOR THE<br><span>CULTURE.</span></h2>
+      <p class="story-body">Clean Cuts was founded in 2018 on one belief — that <strong>a great barbershop is more than just a haircut.</strong> It's a place where you feel good from the moment you walk in to the moment you walk out.</p>
+      <p class="story-body">We started with one chair and one barber in South LA. Today we're three master barbers deep, thousands of clients strong, and still delivering the same standard we set on day one — <strong>precision, care, and culture.</strong></p>
+      <p class="story-body">We don't rush. We don't cut corners. We listen to what you want and we deliver it every single time. That's the Clean Cuts promise and it's why our clients don't go anywhere else.</p>
+    </div>
+    <div>
+      <img class="story-img" src="https://images.pexels.com/photos/3998429/pexels-photo-3998429.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Clean Cuts Barbershop">
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+
+<section class="values-section">
+  <div class="reveal">
+    <div class="sec-eyebrow"><div class="sec-eyebrow-line"></div><span class="sec-eyebrow-text">What We Stand For</span></div>
+    <h2 class="sec-title">OUR <span>VALUES</span></h2>
+    <p class="sec-sub">Three things drive everything we do at Clean Cuts.</p>
+  </div>
+  <div class="values-grid reveal">
+    <div class="value">
+      <span class="value-icon">✂️</span>
+      <div class="value-title">Precision First</div>
+      <div class="value-desc">Every cut is approached with intention. We take the time to understand exactly what you want and we execute it with the level of skill that keeps clients coming back for years.</div>
+    </div>
+    <div class="value">
+      <span class="value-icon">🤝</span>
+      <div class="value-title">Genuine Care</div>
+      <div class="value-desc">Our barbers genuinely care — about their craft, about their clients, and about the community. You're not a ticket number here. You're someone we actually know.</div>
+    </div>
+    <div class="value">
+      <span class="value-icon">🏆</span>
+      <div class="value-title">Never Compromise</div>
+      <div class="value-desc">We use professional-grade tools, premium products, and proven techniques. No shortcuts. No rushing. If it's not right, we fix it — every single time, no questions asked.</div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+
+<section class="info-section reveal">
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-title">HOURS</div>
+      <div class="info-item"><strong>Monday</strong>Closed</div>
+      <div class="info-item"><strong>Tuesday – Friday</strong>9:00 AM – 7:00 PM</div>
+      <div class="info-item"><strong>Saturday</strong>9:00 AM – 5:00 PM</div>
+      <div class="info-item"><strong>Sunday</strong>10:00 AM – 3:00 PM</div>
+    </div>
+    <div class="info-card">
+      <div class="info-title">LOCATION</div>
+      <div class="info-item"><strong>Address</strong>1247 S La Brea Ave<br>Los Angeles, CA 90019</div>
+      <div class="info-item"><strong>Neighborhood</strong>Mid-City · South LA</div>
+      <div class="info-item"><strong>Parking</strong>Free street parking available</div>
+    </div>
+    <div class="info-card">
+      <div class="info-title">CONTACT</div>
+      <div class="info-item"><strong>Phone</strong>(831) 566-4767</div>
+      <div class="info-item"><strong>Email</strong>hello@mojowebsite.com</div>
+      <div class="info-item"><strong>Instagram</strong>@cleancutsla</div>
+      <div class="info-item" style="margin-top:20px"><a href="booking.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--red);color:var(--blk);padding:11px 24px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none">Book Now →</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-bar">
+  <div class="cta-bar-text">COME SEE WHAT WE DO.</div>
+  <a href="booking.html" class="btn-dark">Book Your Cut →</a>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="f-copy">© 2026 Clean Cuts Barbershop · Los Angeles, CA · All rights reserved.</div>
+    <div class="f-pow"><a href="https://mojodigitalagency.com">Powered by Mojo Digital Agency</a></div>
+  </div>
+</footer>
+<script>
+const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const ham=document.getElementById('ham'),mob=document.getElementById('mob');
+ham.addEventListener('click',()=>{mob.classList.toggle('open');const s=ham.querySelectorAll('span');if(mob.classList.contains('open')){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}else{s.forEach(x=>{x.style.transform='';x.style.opacity='';})}});
+function closeMob(){mob.classList.remove('open');ham.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='';})}
+</script>
+</body>
+</html>
