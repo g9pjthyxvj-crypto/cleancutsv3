@@ -7,196 +7,238 @@
 <title>Clean Cuts Barbershop — Los Angeles, CA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 a{color:inherit;text-decoration:none}
-html{scroll-behavior:smooth;overflow-x:hidden;background:#0A0A0A;color:#F0EDE4}
-body{font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;overflow-x:hidden;background:#0A0A0A;color:#F0EDE8}
+body{background:#0A0A0A;color:#F0EDE8;font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
 :root{
 –blk:#0A0A0A;
 –blk2:#111111;
-–blk3:#1A1A1A;
-–gold:#8B0000;
-–gold2:#A50000;
-–gold3:#9B0000;
-–white:#F0EDE4;
-–gray:#888078;
-–gray2:#666058;
-–red:#8B0000;–red2:#A50000;–red3:#9B0000;
-–border:rgba(139,0,0,0.2);
-–border2:rgba(139,0,0,0.08);
+–blk3:#1C1C1C;
+–red:#8B0000;
+–red2:#A50000;
+–red3:#6B0000;
+–white:#F0EDE8;
+–chrome:#C8C4BC;
+–chrome2:#A8A49C;
+–gray:#6A6660;
+–border:rgba(200,196,188,0.1);
+–border2:rgba(200,196,188,0.05);
 –nav-h:76px;
 }
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;height:var(–nav-h);padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.92);border-bottom:1px solid var(–border2);backdrop-filter:blur(24px)}
-.logo{display:flex;flex-direction:column;gap:1px}
-.logo-main{font-family:‘Playfair Display’,serif;font-size:22px;font-weight:700;letter-spacing:1px;color:var(–white);line-height:1}
-.logo-main span{color:var(–red)}
-.logo-sub{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(–gray)}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:var(–nav-h);padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.95);border-bottom:1px solid var(–border2);backdrop-filter:blur(20px)}
+.logo-wrap{display:flex;flex-direction:column;gap:2px}
+.logo-name{font-family:‘Playfair Display’,serif;font-size:20px;font-weight:700;color:var(–white);letter-spacing:1px;line-height:1}
+.logo-name em{font-style:italic;color:var(–red2)}
+.logo-loc{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(–gray)}
 .nav-links{display:flex;gap:36px;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
-.nav-links a{font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(–gray);transition:color .25s;white-space:nowrap}
-.nav-links a:hover,.nav-links a.active{color:var(–red)}
-.nav-cta{background:var(–red);color:var(–blk);padding:11px 26px;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:all .25s;white-space:nowrap}
-.nav-cta:hover{background:var(–red2);transform:translateY(-1px)}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(–chrome2);transition:color .25s;white-space:nowrap}
+.nav-links a:hover{color:var(–white)}
+.nav-book{background:var(–red);color:var(–white);padding:11px 28px;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;transition:all .25s;white-space:nowrap}
+.nav-book:hover{background:var(–red2);transform:translateY(-1px)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:600}
-.hamburger span{width:24px;height:2px;background:var(–white);display:block;transition:all .3s}
-.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,0.98);z-index:550;flex-direction:column;align-items:center;justify-content:center;gap:0}
-.mobile-menu.open{display:flex}
-.mobile-menu a{display:block;padding:18px 0;font-family:‘Bebas Neue’,sans-serif;font-size:42px;letter-spacing:4px;color:var(–gray);transition:color .2s;text-align:center}
-.mobile-menu a:hover{color:var(–red)}
-.mob-cta{background:var(–red)!important;color:var(–blk)!important;padding:16px 48px!important;margin-top:24px;font-size:14px!important}
+.hamburger span{width:24px;height:1.5px;background:var(–white);display:block;transition:all .3s}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,0.98);z-index:550;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:‘Playfair Display’,serif;font-size:40px;font-weight:700;color:var(–chrome2);padding:14px 0;transition:color .2s;text-align:center}
+.mob-menu a:hover{color:var(–white)}
+.mob-menu a.mob-cta{background:var(–red);color:var(–white);padding:14px 48px;margin-top:20px;font-size:18px}
 
 /* ── HERO ── */
-.hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;overflow:hidden}
-.hero-video-wrap{position:absolute;inset:0;z-index:0}
-.hero-video-wrap video{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s}
-.hero-video-wrap video.active{opacity:1}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,0.95) 40%,rgba(10,10,10,0.5) 100%);z-index:1}
-.hero-grain{position:absolute;inset:0;z-index:2;opacity:.04;background-image:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘noise’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23noise)’/%3E%3C/svg%3E”);background-size:200px}
-.hero-content{position:relative;z-index:3;padding:calc(var(–nav-h) + 100px) 6% 80px;max-width:680px}
-.hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:32px;opacity:0;animation:fadeUp .8s .3s forwards}
-.hero-eyebrow-line{width:40px;height:1px;background:var(–red)}
-.hero-eyebrow-text{font-size:10px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(–red)}
-.hero-title{font-family:‘Playfair Display’,serif;font-size:clamp(56px,8vw,100px);font-weight:700;line-height:.88;letter-spacing:2px;color:var(–white);margin-bottom:8px;opacity:0;animation:fadeUp .8s .5s forwards}
-.hero-title span{color:var(–red);display:block}
-.hero-tag{font-size:11px;font-weight:400;letter-spacing:6px;text-transform:uppercase;color:var(–gray);margin-bottom:28px;opacity:0;animation:fadeUp .8s .6s forwards}
-.hero-desc{font-size:16px;font-weight:300;color:rgba(240,237,228,0.65);line-height:1.9;max-width:480px;margin-bottom:48px;opacity:0;animation:fadeUp .8s .7s forwards}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg video{width:100%;height:100%;object-fit:cover;filter:brightness(.3) contrast(1.2)}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,10,10,.97) 40%,rgba(10,10,10,.5) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;padding:calc(var(–nav-h) + 120px) 6% 100px;max-width:660px}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px;opacity:0;animation:fadeUp .7s .2s forwards}
+.ey-line{width:36px;height:1px;background:var(–red);flex-shrink:0}
+.ey-text{font-size:10px;font-weight:500;letter-spacing:5px;text-transform:uppercase;color:var(–red2)}
+.hero-title{font-family:‘Playfair Display’,serif;font-size:clamp(56px,8vw,100px);font-weight:700;line-height:1.0;color:var(–white);margin-bottom:10px;opacity:0;animation:fadeUp .7s .35s forwards}
+.hero-title em{font-style:italic;color:var(–red2);display:block}
+.hero-tag{font-family:‘Bebas Neue’,sans-serif;font-size:clamp(14px,1.8vw,20px);letter-spacing:5px;color:var(–chrome);margin-bottom:24px;opacity:0;animation:fadeUp .7s .45s forwards}
+.hero-desc{font-size:16px;font-weight:300;color:var(–chrome2);line-height:1.9;max-width:480px;margin-bottom:44px;opacity:0;animation:fadeUp .7s .55s forwards}
 .hero-desc strong{color:var(–white);font-weight:400}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .8s forwards}
-.btn-gold{background:var(–red);color:#0A0A0A;padding:15px 36px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;transition:all .3s}
-.btn-gold:hover{background:var(–red2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,168,76,.3)}
-.btn-ghost{color:var(–white);font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;padding-bottom:3px;border-bottom:1px solid rgba(240,237,228,.2);transition:all .3s}
-.btn-ghost:hover{color:var(–red);border-color:var(–red);gap:14px}
-
-/* Video dots */
-.hero-dots{position:absolute;bottom:32px;left:6%;z-index:4;display:flex;gap:10px}
-.hero-dot{width:28px;height:2px;background:rgba(240,237,228,.2);cursor:pointer;transition:all .3s}
-.hero-dot.active{background:var(–red);width:44px}
+.hero-btns{display:flex;gap:18px;align-items:center;flex-wrap:wrap;opacity:0;animation:fadeUp .7s .65s forwards}
+.btn-red{background:var(–red);color:var(–white);padding:15px 36px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;transition:all .3s}
+.btn-red:hover{background:var(–red2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(139,0,0,.35)}
+.btn-line{color:var(–white);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;border-bottom:1px solid rgba(240,237,232,.25);padding-bottom:3px;transition:all .3s}
+.btn-line:hover{color:var(–red2);border-color:var(–red2);gap:14px}
+.hero-dots{position:absolute;bottom:40px;left:6%;z-index:3;display:flex;gap:10px}
+.dot{width:30px;height:2px;background:rgba(240,237,232,.2);cursor:pointer;transition:all .3s}
+.dot.on{background:var(–red);width:48px}
 
 /* ── TICKER ── */
 .ticker{background:var(–red);padding:13px 0;overflow:hidden;white-space:nowrap}
-.ticker-track{display:inline-flex;animation:tick 30s linear infinite}
+.ticker-track{display:inline-flex;animation:tick 28s linear infinite}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.ti{font-family:‘Bebas Neue’,sans-serif;font-size:15px;letter-spacing:4px;color:var(–blk);padding:0 32px;opacity:.8}
-.ts{opacity:.3}
+.ti{font-family:‘Bebas Neue’,sans-serif;font-size:13px;letter-spacing:4px;color:rgba(240,237,232,.85);padding:0 28px}
+.sep{opacity:.3}
 
 /* ── STATS ── */
-.stats{background:#111111;border-bottom:1px solid var(–border2);padding:52px 6%;display:grid;grid-template-columns:repeat(4,1fr)}
+.stats{background:var(–blk2);border-bottom:1px solid var(–border2);padding:52px 6%;display:grid;grid-template-columns:repeat(4,1fr)}
 .stat{text-align:center;position:relative}
-.stat+.stat::before{content:’’;position:absolute;left:0;top:50%;transform:translateY(-50%);height:40px;width:1px;background:var(–border2)}
-.stat-num{font-family:‘Bebas Neue’,sans-serif;font-size:64px;color:var(–red);line-height:1;letter-spacing:2px}
-.stat-lbl{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(–gray);margin-top:6px}
+.stat+.stat::before{content:’’;position:absolute;left:0;top:50%;transform:translateY(-50%);height:40px;width:1px;background:var(–border)}
+.stat-num{font-family:‘Playfair Display’,serif;font-size:56px;font-weight:700;color:var(–white);line-height:1}
+.stat-num em{font-style:normal;color:var(–red2)}
+.stat-lbl{font-size:9px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(–chrome2);margin-top:7px}
 
 /* ── SECTIONS ── */
 .sec{padding:100px 6%}
-.sec-alt{background:#111111}
-.sec-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:20px}
-.sec-eyebrow-line{width:32px;height:1px;background:var(–red)}
-.sec-eyebrow-text{font-size:9px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(–red)}
-.sec-title{font-family:‘Playfair Display’,serif;font-size:clamp(36px,5vw,72px);font-weight:700;line-height:.92;letter-spacing:2px;color:var(–white);margin-bottom:20px}
-.sec-title span{color:var(–red)}
-.sec-sub{font-size:15px;font-weight:300;color:var(–gray);line-height:1.9;max-width:520px}
+.sec-dark{background:var(–blk2)}
+.sec-line{width:28px;height:1px;background:var(–red);flex-shrink:0}
+.sec-tag{font-size:10px;font-weight:500;letter-spacing:5px;text-transform:uppercase;color:var(–red2)}
+.sec-title{font-family:‘Playfair Display’,serif;font-size:clamp(36px,5vw,68px);font-weight:700;color:var(–white);line-height:1.05;margin-bottom:18px}
+.sec-title em{font-style:italic;color:var(–red2)}
+.sec-sub{font-size:15px;font-weight:300;color:var(–chrome2);line-height:1.9;max-width:520px}
 
 /* ── SERVICES ── */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–border2);border:1px solid var(–border2);margin-top:64px}
-.svc{background:var(–blk);padding:48px 36px;position:relative;overflow:hidden;transition:background .3s;cursor:default}
-.svc-num{font-family:‘Bebas Neue’,sans-serif;font-size:96px;color:rgba(201,168,76,0.05);line-height:1;position:absolute;top:12px;right:20px;letter-spacing:2px;pointer-events:none}
-.svc::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:transparent;transition:background .4s}
-.svc:hover::before{background:var(–red)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–border);border:1px solid var(–border);margin-top:64px}
+.svc{background:var(–blk);padding:44px 36px;position:relative;overflow:hidden;transition:background .3s}
+.svc::after{content:’’;position:absolute;bottom:0;left:0;width:0;height:2px;background:var(–red);transition:width .4s}
+.svc:hover::after{width:100%}
 .svc:hover{background:var(–blk2)}
-.svc-icon{font-size:32px;margin-bottom:18px;display:block}
-.svc-name{font-family:‘Inter’,sans-serif;font-size:19px;font-weight:700;color:var(–white);margin-bottom:10px}
-.svc-desc{font-size:13px;color:var(–gray);line-height:1.8;margin-bottom:20px}
-.svc-price{font-family:‘Bebas Neue’,sans-serif;font-size:36px;color:var(–red);letter-spacing:1px}
-.svc-duration{font-size:10px;color:var(–gray);margin-top:4px;letter-spacing:1px;text-transform:uppercase}
+.svc-num{font-family:‘Bebas Neue’,sans-serif;font-size:72px;color:rgba(200,196,188,.04);line-height:1;margin-bottom:12px;letter-spacing:2px}
+.svc-name{font-family:‘Playfair Display’,serif;font-size:20px;font-weight:600;color:var(–white);margin-bottom:8px}
+.svc-desc{font-size:13px;color:var(–chrome2);line-height:1.8;margin-bottom:18px}
+.svc-price{font-family:‘Bebas Neue’,sans-serif;font-size:36px;color:var(–red2);letter-spacing:2px}
+.svc-dur{font-size:10px;color:var(–gray);margin-top:4px;letter-spacing:1px;text-transform:uppercase}
 
 /* ── TEAM ── */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:64px}
-.team-card{background:var(–blk);position:relative;overflow:hidden}
-.team-img{width:100%;height:380px;object-fit:cover;object-position:center top;filter:grayscale(20%) contrast(1.1);transition:all .6s}
-.team-card:hover .team-img{filter:grayscale(0%) contrast(1.1);transform:scale(1.03)}
-.team-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.95) 0%,rgba(10,10,10,.4) 50%,transparent 100%)}
-.team-info{position:absolute;bottom:0;left:0;right:0;padding:32px 28px}
-.team-name{font-family:‘Bebas Neue’,sans-serif;font-size:32px;letter-spacing:3px;color:var(–white);margin-bottom:4px}
-.team-role{font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(–red);margin-bottom:10px}
-.team-spec{font-size:12px;color:rgba(240,237,228,.5);line-height:1.6;margin-bottom:20px}
-.team-book-btn{display:inline-flex;align-items:center;gap:8px;background:var(–red);color:var(–blk);padding:9px 20px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s}
-.team-book-btn:hover{background:var(–red2)}
+.team-card{position:relative;overflow:hidden;background:var(–blk2)}
+.team-img{width:100%;height:420px;object-fit:cover;object-position:center top;filter:grayscale(30%) contrast(1.1);transition:all .6s;display:block}
+.team-card:hover .team-img{filter:grayscale(0%) contrast(1.1);transform:scale(1.04)}
+.team-over{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.96) 0%,rgba(10,10,10,.3) 55%,transparent 100%)}
+.team-info{position:absolute;bottom:0;left:0;right:0;padding:28px 28px 32px}
+.team-name{font-family:‘Playfair Display’,serif;font-size:24px;font-weight:700;color:var(–white);margin-bottom:3px}
+.team-role{font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(–red2);margin-bottom:8px}
+.team-spec{font-size:12px;color:var(–chrome2);line-height:1.6;margin-bottom:18px}
+.team-btn{display:inline-flex;align-items:center;gap:8px;background:var(–red);color:var(–white);padding:9px 20px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:all .25s}
+.team-btn:hover{background:var(–red2)}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img{width:100%;height:560px;object-fit:cover;filter:grayscale(20%) contrast(1.1)}
+.about-badge{position:absolute;bottom:-20px;right:-20px;width:160px;height:160px;background:var(–red);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.badge-num{font-family:‘Bebas Neue’,sans-serif;font-size:52px;color:var(–white);line-height:1;letter-spacing:2px}
+.badge-txt{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(240,237,232,.7);margin-top:4px}
+.about-body{font-size:15px;font-weight:300;color:var(–chrome2);line-height:1.9;margin-bottom:18px}
+.about-body strong{color:var(–white);font-weight:400}
+.about-feats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:28px 0}
+.feat{display:flex;align-items:center;gap:10px;font-size:12px;color:var(–chrome2)}
+.feat::before{content:’’;width:6px;height:6px;background:var(–red);border-radius:50%;flex-shrink:0}
+
+/* ── GALLERY ── */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 280px;gap:3px;margin-top:60px}
+.gal-item{overflow:hidden;position:relative;background:var(–blk3)}
+.gal-item:first-child{grid-row:span 2}
+.gal-img{width:100%;height:100%;object-fit:cover;transition:transform .6s;filter:grayscale(20%)}
+.gal-item:hover .gal-img{transform:scale(1.06);filter:grayscale(0%)}
+.gal-over{position:absolute;inset:0;background:linear-gradient(to top,rgba(139,0,0,.25) 0%,transparent 50%);opacity:0;transition:opacity .3s}
+.gal-item:hover .gal-over{opacity:1}
 
 /* ── REVIEWS ── */
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–border2);border:1px solid var(–border2);margin-top:64px}
-.rev{background:var(–blk);padding:44px 36px;transition:background .3s}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(–border);border:1px solid var(–border);margin-top:60px}
+.rev{background:var(–blk);padding:40px 32px;transition:background .3s}
 .rev:hover{background:var(–blk2)}
-.stars{display:flex;gap:3px;margin-bottom:20px}
-.stars span{color:var(–red);font-size:15px}
-.rev-text{font-size:14px;font-weight:300;color:rgba(240,237,228,.7);line-height:1.9;margin-bottom:24px;font-style:italic}
-.rev-author{display:flex;align-items:center;gap:14px}
-.avatar{width:40px;height:40px;border-radius:50%;background:var(–blk3);border:1px solid var(–border);display:flex;align-items:center;justify-content:center;font-family:‘Bebas Neue’,sans-serif;font-size:17px;color:var(–red);flex-shrink:0}
-.author-name{font-size:13px;font-weight:600;color:var(–white)}
-.author-meta{font-size:10px;color:var(–gray);margin-top:2px;letter-spacing:.5px}
+.stars{display:flex;gap:3px;margin-bottom:18px}
+.stars span{color:var(–red2);font-size:16px}
+.rev-text{font-family:‘Playfair Display’,serif;font-size:15px;font-style:italic;color:var(–chrome2);line-height:1.85;margin-bottom:22px}
+.rev-auth{display:flex;align-items:center;gap:14px}
+.av{width:40px;height:40px;border-radius:50%;background:var(–red);display:flex;align-items:center;justify-content:center;font-family:‘Playfair Display’,serif;font-size:16px;font-weight:700;color:var(–white);flex-shrink:0}
+.auth-name{font-size:13px;font-weight:500;color:var(–white)}
+.auth-meta{font-size:10px;color:var(–gray);margin-top:2px;letter-spacing:.5px}
+
+/* ── BOOKING SECTION ── */
+.booking-tabs{display:flex;gap:2px;margin-bottom:40px;border-bottom:1px solid var(–border)}
+.tab-btn{padding:16px 32px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(–chrome2);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .25s}
+.tab-btn.on{color:var(–white);border-bottom-color:var(–red)}
+.tab-btn:hover{color:var(–white)}
+.tab-panel{display:none}
+.tab-panel.on{display:block}
+.barber-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:32px}
+.barber-tab{display:flex;align-items:center;gap:14px;padding:18px 20px;background:var(–blk2);border:1px solid var(–border2);cursor:pointer;transition:all .25s;border-bottom:2px solid transparent}
+.barber-tab:hover{background:var(–blk3)}
+.barber-tab.on{border-bottom-color:var(–red);background:var(–blk3)}
+.btab-img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0;filter:grayscale(30%)}
+.btab-name{font-family:‘Playfair Display’,serif;font-size:16px;font-weight:600;color:var(–white)}
+.btab-role{font-size:10px;color:var(–red2);letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
+.barber-cal{display:none}
+.barber-cal.on{display:block}
+.cal-box{background:var(–blk2);border:1px solid var(–border);padding:36px}
+.cal-box iframe{width:100%;min-height:650px;border:none;display:block}
 
 /* ── CTA ── */
-.cta{padding:100px 6%;text-align:center;background:var(–blk);position:relative;overflow:hidden}
-.cta::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(201,168,76,.07) 0%,transparent 70%);pointer-events:none}
-.cta-title{font-family:‘Playfair Display’,serif;font-size:clamp(48px,7vw,88px);font-weight:700;line-height:.9;letter-spacing:3px;color:var(–white);margin-bottom:20px;position:relative;z-index:1}
-.cta-title span{color:var(–red);display:block}
-.cta-sub{font-size:16px;font-weight:300;color:var(–gray);max-width:420px;margin:0 auto 48px;line-height:1.9;position:relative;z-index:1}
+.cta{padding:100px 6%;text-align:center;background:var(–blk2);position:relative;overflow:hidden}
+.cta::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(139,0,0,.08) 0%,transparent 70%)}
+.cta-title{font-family:‘Playfair Display’,serif;font-size:clamp(44px,6.5vw,88px);font-weight:700;color:var(–white);line-height:1.05;margin-bottom:18px;position:relative;z-index:1}
+.cta-title em{font-style:italic;color:var(–red2)}
+.cta-sub{font-size:16px;font-weight:300;color:var(–chrome2);max-width:440px;margin:0 auto 44px;line-height:1.9;position:relative;z-index:1}
 
 /* ── FOOTER ── */
 footer{background:#060606;border-top:1px solid var(–border2);padding:72px 6% 32px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid var(–border2);margin-bottom:28px}
-.f-logo-main{font-family:‘Playfair Display’,serif;font-size:22px;font-weight:700;letter-spacing:1px;color:var(–white);display:block;margin-bottom:3px}
-.f-logo-main span{color:var(–red)}
-.f-logo-sub{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(–gray2);display:block;margin-bottom:16px}
-.f-desc{font-size:13px;color:var(–gray2);line-height:1.8;max-width:220px}
-.f-social{display:flex;gap:8px;margin-top:18px}
-.f-soc{width:36px;height:36px;border:1px solid var(–border2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:var(–gray2);transition:all .25s}
-.f-soc:hover{border-color:var(–red);color:var(–red)}
-.f-col-title{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(–gray2);margin-bottom:18px}
-.f-links{list-style:none;display:flex;flex-direction:column;gap:10px}
-.f-links a{font-size:13px;color:var(–gray2);transition:color .25s;text-decoration:none}
-.f-links a:hover{color:var(–red)}
-.f-contact{font-size:13px;color:var(–gray2);margin-bottom:8px;line-height:1.6}
-.f-contact a{color:var(–gray2);transition:color .25s;text-decoration:none}
-.f-contact a:hover{color:var(–white)}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.f-copy{font-size:11px;color:var(–gray2);letter-spacing:.5px}
-.f-pow a{font-size:11px;color:#666058;transition:color .25s;text-decoration:none}
-.f-pow a:hover{color:var(–red)}
-
-/* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid var(–border2);margin-bottom:24px}
+.foot-name{font-family:‘Playfair Display’,serif;font-size:20px;font-weight:700;color:var(–white);display:block;margin-bottom:3px}
+.foot-name em{font-style:italic;color:var(–red2)}
+.foot-loc{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:var(–gray);display:block;margin-bottom:14px}
+.foot-desc{font-size:13px;color:var(–gray);line-height:1.8;max-width:220px}
+.foot-soc{display:flex;gap:8px;margin-top:18px}
+.soc-btn{width:36px;height:36px;border:1px solid var(–border);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:var(–gray);transition:all .25s}
+.soc-btn:hover{border-color:var(–red);color:var(–red2)}
+.foot-col-title{font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(–gray);margin-bottom:16px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-links a{font-size:13px;color:var(–gray);transition:color .25s}
+.foot-links a:hover{color:var(–white)}
+.foot-contact{font-size:13px;color:var(–gray);margin-bottom:8px;line-height:1.6}
+.foot-contact a{color:var(–gray);transition:color .25s}
+.foot-contact a:hover{color:var(–white)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:11px;color:var(–gray)}
+.foot-pow{font-size:11px;color:var(–gray)}
+.foot-pow a{color:var(–gray);transition:color .25s}
+.foot-pow a:hover{color:var(–chrome2)}
 
 /* ── ANIMATIONS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s,transform .75s}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
 .nav-links{display:none}
 .team-grid{grid-template-columns:1fr 1fr}
-.footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+.about-grid{grid-template-columns:1fr;gap:48px}
+.about-img{height:400px}
+.about-badge{display:none}
+.foot-grid{grid-template-columns:1fr 1fr;gap:32px}
 .stats{grid-template-columns:repeat(2,1fr)}
 .stat+.stat::before{display:none}
+.barber-tabs{grid-template-columns:1fr}
 }
 @media(max-width:640px){
 nav{padding:0 5%}
 .hamburger{display:flex}
-.hero-content{padding:calc(var(–nav-h)+40px) 5% 56px}
-.hero-title{font-size:clamp(64px,17vw,88px)}
+.hero-content{padding:calc(var(–nav-h)+80px) 5% 80px}
+.hero-title{font-size:clamp(48px,13vw,72px)}
 .sec{padding:68px 5%}
-.svc-grid{grid-template-columns:1fr}
+.svc-grid,.rev-grid{grid-template-columns:1fr}
 .team-grid{grid-template-columns:1fr}
-.rev-grid{grid-template-columns:1fr}
-.footer-grid{grid-template-columns:1fr}
-.footer-bottom{flex-direction:column;text-align:center}
+.gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+.gal-item,.gal-item:first-child{height:180px;grid-row:span 1}
+.foot-grid{grid-template-columns:1fr}
+.foot-bottom{flex-direction:column;text-align:center}
 .stats{padding:36px 5%}
-.stat-num{font-size:48px}
+.stat-num{font-size:44px}
 .hero-btns{flex-direction:column;align-items:flex-start}
+.booking-tabs{overflow-x:auto}
+.cal-box{padding:0;border:none;background:transparent}
 }
 </style>
 
@@ -206,190 +248,247 @@ nav{padding:0 5%}
 <!-- NAV -->
 
 <nav>
-  <a href="index.html" class="logo" style="text-decoration:none">
-    <span class="logo-main">CLEAN <span>CUTS</span></span>
-    <span class="logo-sub">Barbershop · Los Angeles</span>
+  <a href="#home" class="logo-wrap">
+    <span class="logo-name"><em>Clean</em> Cuts</span>
+    <span class="logo-loc">Barbershop · Los Angeles</span>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="team.html">Our Team</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="booking.html">Book Now</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#team">Our Team</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#booking">Book Now</a></li>
+    <li><a href="#about">About</a></li>
   </ul>
-  <a href="booking.html" class="nav-cta">Book Now</a>
+  <a href="#booking" class="nav-book">Book Now</a>
   <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
 </nav>
 
-<div class="mobile-menu" id="mob">
-  <a href="index.html" onclick="closeMob()">Home</a>
-  <a href="services.html" onclick="closeMob()">Services</a>
-  <a href="team.html" onclick="closeMob()">Our Team</a>
-  <a href="gallery.html" onclick="closeMob()">Gallery</a>
-  <a href="about.html" onclick="closeMob()">About</a>
-  <a href="booking.html" onclick="closeMob()" class="mob-cta">Book Now →</a>
+<!-- MOBILE MENU -->
+
+<div class="mob-menu" id="mob">
+  <a href="#home" onclick="closeMob()">Home</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#team" onclick="closeMob()">Our Team</a>
+  <a href="#gallery" onclick="closeMob()">Gallery</a>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#booking" onclick="closeMob()" class="mob-cta">Book Now →</a>
 </div>
 
 <!-- HERO -->
 
-<section class="hero">
-  <div class="hero-video-wrap" id="videoWrap">
-    <video autoplay muted loop playsinline class="active" id="v1">
-      <source src="https://videos.pexels.com/video-files/7697073/7697073-uhd_2560_1440_25fps.mp4" type="video/mp4">
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline id="hv1" style="opacity:1;transition:opacity 1s">
       <source src="https://videos.pexels.com/video-files/7697073/7697073-hd_1920_1080_25fps.mp4" type="video/mp4">
     </video>
-    <video autoplay muted loop playsinline id="v2">
-      <source src="https://videos.pexels.com/video-files/7697049/7697049-uhd_2560_1440_25fps.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline id="hv2" style="opacity:0;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.3) contrast(1.2);transition:opacity 1s">
       <source src="https://videos.pexels.com/video-files/7697049/7697049-hd_1920_1080_25fps.mp4" type="video/mp4">
     </video>
-    <video autoplay muted loop playsinline id="v3">
-      <source src="https://videos.pexels.com/video-files/34039157/34039157-uhd_2560_1440_30fps.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline id="hv3" style="opacity:0;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.3) contrast(1.2);transition:opacity 1s">
       <source src="https://videos.pexels.com/video-files/34039157/34039157-hd_1920_1080_30fps.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-grain"></div>
+  <div class="hero-grad"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow"><div class="hero-eyebrow-line"></div><span class="hero-eyebrow-text">Los Angeles, California</span></div>
-    <h1 class="hero-title">STAY<span>SHARP.</span></h1>
+    <div class="eyebrow"><div class="ey-line"></div><span class="ey-text">Los Angeles, California</span></div>
+    <h1 class="hero-title">Stay Sharp.<em>Look Clean.</em></h1>
     <div class="hero-tag">Premium Barbershop · Est. 2018</div>
-    <p class="hero-desc">Where <strong>precision meets culture.</strong> Clean Cuts is LA's premier barbershop — fades, tapers, beard work, and straight razor shaves by barbers who genuinely care about their craft.</p>
+    <p class="hero-desc">Where <strong>precision meets culture.</strong> LA's premier barbershop — clean fades, sharp lineups, beard sculpting, and straight razor shaves by barbers who live for the craft.</p>
     <div class="hero-btns">
-      <a href="booking.html" class="btn-gold">Book Your Cut <span>→</span></a>
-      <a href="team.html" class="btn-ghost">Meet The Team →</a>
+      <a href="#booking" class="btn-red">Book Your Cut <span>→</span></a>
+      <a href="#team" class="btn-line">Meet The Team →</a>
     </div>
   </div>
   <div class="hero-dots">
-    <div class="hero-dot active" onclick="switchVideo(0)"></div>
-    <div class="hero-dot" onclick="switchVideo(1)"></div>
-    <div class="hero-dot" onclick="switchVideo(2)"></div>
+    <div class="dot on" onclick="switchVid(0)"></div>
+    <div class="dot" onclick="switchVid(1)"></div>
+    <div class="dot" onclick="switchVid(2)"></div>
   </div>
 </section>
 
 <!-- TICKER -->
 
-<div class="ticker"><div class="ticker-track">
-  <span class="ti">PRECISION FADES</span><span class="ti ts">✦</span>
-  <span class="ti">BEARD SCULPTING</span><span class="ti ts">✦</span>
-  <span class="ti">HOT TOWEL SHAVES</span><span class="ti ts">✦</span>
-  <span class="ti">SKIN FADES</span><span class="ti ts">✦</span>
-  <span class="ti">KIDS CUTS</span><span class="ti ts">✦</span>
-  <span class="ti">LOS ANGELES CA</span><span class="ti ts">✦</span>
-  <span class="ti">BY APPOINTMENT</span><span class="ti ts">✦</span>
-  <span class="ti">PRECISION FADES</span><span class="ti ts">✦</span>
-  <span class="ti">BEARD SCULPTING</span><span class="ti ts">✦</span>
-  <span class="ti">HOT TOWEL SHAVES</span><span class="ti ts">✦</span>
-  <span class="ti">SKIN FADES</span><span class="ti ts">✦</span>
-  <span class="ti">KIDS CUTS</span><span class="ti ts">✦</span>
-  <span class="ti">LOS ANGELES CA</span><span class="ti ts">✦</span>
-  <span class="ti">BY APPOINTMENT</span><span class="ti ts">✦</span>
-</div></div>
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ti">PRECISION FADES</span><span class="sep ti">✦</span>
+    <span class="ti">BEARD SCULPTING</span><span class="sep ti">✦</span>
+    <span class="ti">HOT TOWEL SHAVES</span><span class="sep ti">✦</span>
+    <span class="ti">SKIN FADES</span><span class="sep ti">✦</span>
+    <span class="ti">KIDS CUTS</span><span class="sep ti">✦</span>
+    <span class="ti">LOS ANGELES CA</span><span class="sep ti">✦</span>
+    <span class="ti">BY APPOINTMENT</span><span class="sep ti">✦</span>
+    <span class="ti">PRECISION FADES</span><span class="sep ti">✦</span>
+    <span class="ti">BEARD SCULPTING</span><span class="sep ti">✦</span>
+    <span class="ti">HOT TOWEL SHAVES</span><span class="sep ti">✦</span>
+    <span class="ti">SKIN FADES</span><span class="sep ti">✦</span>
+    <span class="ti">KIDS CUTS</span><span class="sep ti">✦</span>
+    <span class="ti">LOS ANGELES CA</span><span class="sep ti">✦</span>
+    <span class="ti">BY APPOINTMENT</span><span class="sep ti">✦</span>
+  </div>
+</div>
 
 <!-- STATS -->
 
 <div class="stats reveal">
-  <div class="stat"><div class="stat-num">4.9</div><div class="stat-lbl">Star Rating</div></div>
-  <div class="stat"><div class="stat-num">6+</div><div class="stat-lbl">Years Cutting</div></div>
-  <div class="stat"><div class="stat-num">8K+</div><div class="stat-lbl">Happy Clients</div></div>
+  <div class="stat"><div class="stat-num"><em>4.9</em></div><div class="stat-lbl">Star Rating</div></div>
+  <div class="stat"><div class="stat-num">6<em>+</em></div><div class="stat-lbl">Years Cutting</div></div>
+  <div class="stat"><div class="stat-num">8<em>K</em></div><div class="stat-lbl">Happy Clients</div></div>
   <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Master Barbers</div></div>
 </div>
 
-<!-- SERVICES PREVIEW -->
+<!-- SERVICES -->
 
 <section class="sec" id="services">
   <div class="reveal">
-    <div class="sec-eyebrow"><div class="sec-eyebrow-line"></div><span class="sec-eyebrow-text">What We Do</span></div>
-    <h2 class="sec-title">OUR <span>SERVICES</span></h2>
-    <p class="sec-sub">Every cut is a conversation. Every service is executed with professional grade tools and genuine attention to detail.</p>
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px"><div class="sec-line"></div><span class="sec-tag">What We Do</span></div>
+    <h2 class="sec-title">Our <em>Services</em></h2>
+    <p class="sec-sub">Every service includes a consultation, hot towel finish, and straight razor neck cleanup. No rushing. No shortcuts.</p>
   </div>
   <div class="svc-grid reveal">
     <div class="svc">
-      <span class="svc-num">01</span>
-      <span class="svc-icon">✂️</span>
+      <div class="svc-num">01</div>
       <div class="svc-name">Classic Cut</div>
-      <div class="svc-desc">A clean precise haircut tailored to your style. Includes hot towel finish and straight razor neck cleanup.</div>
+      <div class="svc-desc">A clean, precise haircut tailored to your style. Consultation, precision cutting, hot towel finish, straight razor cleanup.</div>
       <div class="svc-price">$35</div>
-      <div class="svc-duration">30 minutes</div>
+      <div class="svc-dur">30 minutes</div>
     </div>
     <div class="svc">
-      <span class="svc-num">02</span>
-      <span class="svc-icon">⚡</span>
+      <div class="svc-num">02</div>
       <div class="svc-name">Fade</div>
       <div class="svc-desc">Low, mid, or high — we blend it clean every time. Seamless fade with hot towel finish and straight razor cleanup.</div>
       <div class="svc-price">$40</div>
-      <div class="svc-duration">45 minutes</div>
+      <div class="svc-dur">45 minutes</div>
     </div>
     <div class="svc">
-      <span class="svc-num">03</span>
-      <span class="svc-icon">🪒</span>
+      <div class="svc-num">03</div>
       <div class="svc-name">Skin Fade</div>
-      <div class="svc-desc">Skin tight on the sides with a seamless blend. The cleanest fade in LA — straight razor finish included.</div>
+      <div class="svc-desc">Skin tight on the sides with a seamless blend. The cleanest fade in LA. Straight razor finish included.</div>
       <div class="svc-price">$45</div>
-      <div class="svc-duration">60 minutes</div>
+      <div class="svc-dur">60 minutes</div>
     </div>
     <div class="svc">
-      <span class="svc-num">04</span>
-      <span class="svc-icon">🧔</span>
+      <div class="svc-num">04</div>
       <div class="svc-name">Beard Trim</div>
-      <div class="svc-desc">Expert beard sculpting by James. Shaped, lined, and finished with hot towel and straight razor edges.</div>
+      <div class="svc-desc">Expert beard sculpting by James. Shaped, lined, and finished with hot towel treatment and straight razor edges.</div>
       <div class="svc-price">$20</div>
-      <div class="svc-duration">20 minutes</div>
+      <div class="svc-dur">20 minutes</div>
     </div>
     <div class="svc">
-      <span class="svc-num">05</span>
-      <span class="svc-icon">👑</span>
-      <div class="svc-name">VIP Full Service</div>
-      <div class="svc-desc">The ultimate Clean Cuts experience. Full haircut, beard trim, hot towel treatment, and scalp massage.</div>
-      <div class="svc-price">$95</div>
-      <div class="svc-duration">90 minutes</div>
+      <div class="svc-num">05</div>
+      <div class="svc-name">Cut + Beard Combo</div>
+      <div class="svc-desc">The complete package. Precision haircut paired with a full beard trim and straight razor cleanup.</div>
+      <div class="svc-price">$55</div>
+      <div class="svc-dur">60 minutes</div>
     </div>
-    <div class="svc" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--blk2)">
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;color:var(--white);margin-bottom:12px">VIEW ALL SERVICES</div>
-      <div style="font-size:13px;color:var(--gray);margin-bottom:24px">8 services starting from $20</div>
-      <a href="services.html" class="btn-gold" style="font-size:10px;padding:12px 28px">See Full Menu →</a>
+    <div class="svc" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--blk2);cursor:default">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:3px;color:var(--chrome2);margin-bottom:8px">AND MORE</div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--white);margin-bottom:12px">Hot Towel Shave · Kids Cut · VIP Full Service</div>
+      <div style="font-size:13px;color:var(--chrome2);margin-bottom:24px">8 services from $20 — $95</div>
+      <a href="#booking" class="btn-red" style="font-size:10px;padding:12px 28px">Book Now →</a>
     </div>
   </div>
 </section>
 
-<!-- TEAM PREVIEW -->
+<!-- TEAM -->
 
-<section class="sec sec-alt" id="team">
+<section class="sec sec-dark" id="team">
   <div class="reveal">
-    <div class="sec-eyebrow"><div class="sec-eyebrow-line"></div><span class="sec-eyebrow-text">The Crew</span></div>
-    <h2 class="sec-title">MEET YOUR <span>BARBERS</span></h2>
-    <p class="sec-sub">Three master barbers. One shop. Zero compromises. Book directly with your barber on their personal calendar.</p>
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px"><div class="sec-line"></div><span class="sec-tag">The Crew</span></div>
+    <h2 class="sec-title">Meet Your <em>Barbers</em></h2>
+    <p class="sec-sub">Three master barbers. One shop. Zero compromises. Book directly with your barber — they remember your cut every time.</p>
   </div>
   <div class="team-grid reveal">
     <div class="team-card">
-      <img class="team-img" src="https://images.pexels.com/photos/2531546/pexels-photo-2531546.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Marcus Davis">
-      <div class="team-overlay"></div>
+      <img class="team-img" src="https://images.pexels.com/photos/1453005/pexels-photo-1453005.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop" alt="Marcus Davis — Barber">
+      <div class="team-over"></div>
       <div class="team-info">
-        <div class="team-name">MARCUS DAVIS</div>
+        <div class="team-name">Marcus Davis</div>
         <div class="team-role">Senior Barber · Fade Specialist</div>
-        <div class="team-spec">Known for clean fades and crisp lineups. Marcus has been cutting hair for 8 years and his chair is always booked.</div>
-        <a href="team.html#marcus" class="team-book-btn">Book With Marcus →</a>
+        <div class="team-spec">8 years behind the chair. Known for clean fades and crisp lineups. His chair stays booked — book early.</div>
+        <a href="#booking" class="team-btn">Book Marcus →</a>
       </div>
     </div>
     <div class="team-card">
-      <img class="team-img" src="https://images.pexels.com/photos/3738348/pexels-photo-3738348.jpeg?auto=compress&cs=tinysrgb&w=800" alt="James Carter">
-      <div class="team-overlay"></div>
+      <img class="team-img" src="https://images.pexels.com/photos/3998429/pexels-photo-3998429.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop" alt="James Carter — Barber">
+      <div class="team-over"></div>
       <div class="team-info">
-        <div class="team-name">JAMES CARTER</div>
+        <div class="team-name">James Carter</div>
         <div class="team-role">Beard Specialist · Hot Towel Expert</div>
-        <div class="team-spec">James is the beard guy. Straight razor shaves, hot towel treatments, and beard sculpting that speaks for itself.</div>
-        <a href="team.html#james" class="team-book-btn">Book With James →</a>
+        <div class="team-spec">The beard guy. Straight razor shaves, hot towel treatments, and beard sculpting that speaks for itself.</div>
+        <a href="#booking" class="team-btn">Book James →</a>
       </div>
     </div>
     <div class="team-card">
-      <img class="team-img" src="https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Carlos Rivera">
-      <div class="team-overlay"></div>
+      <img class="team-img" src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg?auto=compress&cs=tinysrgb&w=800&h=900&fit=crop" alt="Carlos Rivera — Barber">
+      <div class="team-over"></div>
       <div class="team-info">
-        <div class="team-name">CARLOS RIVERA</div>
+        <div class="team-name">Carlos Rivera</div>
         <div class="team-role">Classic Cuts · Tapers & Lineups</div>
-        <div class="team-spec">Old school precision. Carlos brings East LA barbering tradition to every cut — tapers, lineups, and kids cuts.</div>
-        <a href="team.html#carlos" class="team-book-btn">Book With Carlos →</a>
+        <div class="team-spec">Old school East LA precision. Tapers, lineups, and kids cuts done the right way every single time.</div>
+        <a href="#booking" class="team-btn">Book Carlos →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="sec" id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap reveal">
+      <img class="about-img" src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Clean Cuts Barbershop">
+      <div class="about-badge">
+        <div class="badge-num">8K+</div>
+        <div class="badge-txt">Happy Clients</div>
+      </div>
+    </div>
+    <div class="reveal d2">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px"><div class="sec-line"></div><span class="sec-tag">Our Story</span></div>
+      <h2 class="sec-title">Built for the <em>Culture.</em></h2>
+      <p class="about-body">Clean Cuts was founded in 2018 on one belief — that <strong>a great barbershop is more than a haircut.</strong> It's a place you feel at home from the moment you walk in.</p>
+      <p class="about-body">We started with one chair and one barber in South LA. Today we're three master barbers deep, thousands of clients strong, and still delivering the same standard we set day one — <strong>precision, care, and culture.</strong></p>
+      <div class="about-feats">
+        <div class="feat">Professional Grade Tools</div>
+        <div class="feat">Hot Towel on Every Cut</div>
+        <div class="feat">Straight Razor Cleanup</div>
+        <div class="feat">Walk-Ins Welcome</div>
+        <div class="feat">Kids Cuts Available</div>
+        <div class="feat">30-Day Guarantee</div>
+      </div>
+      <a href="#booking" class="btn-red">Book Your Appointment →</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+
+<section class="sec sec-dark" id="gallery">
+  <div class="reveal">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px"><div class="sec-line"></div><span class="sec-tag">The Work</span></div>
+    <h2 class="sec-title">The <em>Gallery</em></h2>
+    <p class="sec-sub">Every cut is real. Every client walked out exactly how they wanted.</p>
+  </div>
+  <div class="gal-grid reveal">
+    <div class="gal-item">
+      <img class="gal-img" src="https://images.pexels.com/photos/1453005/pexels-photo-1453005.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Barber at work">
+      <div class="gal-over"></div>
+    </div>
+    <div class="gal-item">
+      <img class="gal-img" src="https://images.pexels.com/photos/3998429/pexels-photo-3998429.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fade haircut">
+      <div class="gal-over"></div>
+    </div>
+    <div class="gal-item">
+      <img class="gal-img" src="https://images.pexels.com/photos/3998427/pexels-photo-3998427.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Barber tools">
+      <div class="gal-over"></div>
+    </div>
+    <div class="gal-item">
+      <img class="gal-img" src="https://images.pexels.com/photos/2076932/pexels-photo-2076932.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Haircut">
+      <div class="gal-over"></div>
+    </div>
+    <div class="gal-item">
+      <img class="gal-img" src="https://images.pexels.com/photos/4345099/pexels-photo-4345099.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Barber working">
+      <div class="gal-over"></div>
     </div>
   </div>
 </section>
@@ -398,24 +497,77 @@ nav{padding:0 5%}
 
 <section class="sec" id="reviews">
   <div class="reveal" style="text-align:center">
-    <div class="sec-eyebrow" style="justify-content:center"><div class="sec-eyebrow-line"></div><span class="sec-eyebrow-text">Client Reviews</span><div class="sec-eyebrow-line"></div></div>
-    <h2 class="sec-title">WHAT THEY <span>SAY</span></h2>
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:18px"><div class="sec-line"></div><span class="sec-tag">Client Reviews</span><div class="sec-line"></div></div>
+    <h2 class="sec-title">What They <em>Say</em></h2>
   </div>
   <div class="rev-grid reveal">
     <div class="rev">
       <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p class="rev-text">"Marcus has been cutting my hair for 3 years and I wouldn't trust anyone else. The fade is always perfect — never had to ask for a touch up. This is the best barbershop in LA, no question."</p>
-      <div class="rev-author"><div class="avatar">D</div><div><div class="author-name">DeShawn M.</div><div class="author-meta">Fade · Google Review</div></div></div>
+      <p class="rev-text">"Marcus has been cutting my hair for 3 years and I wouldn't trust anyone else. The fade is always perfect — never had to ask for a touch up. Best barbershop in LA, no question."</p>
+      <div class="rev-auth"><div class="av">D</div><div><div class="auth-name">DeShawn M.</div><div class="auth-meta">Fade · Google Review</div></div></div>
     </div>
     <div class="rev">
       <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p class="rev-text">"James did my hot towel shave before my wedding and I genuinely felt like a new man. The shop is clean, the vibes are right, and every barber here actually cares about what they do. My whole groomsmen crew books here now."</p>
-      <div class="rev-author"><div class="avatar">A</div><div><div class="author-name">Andre T.</div><div class="author-meta">Hot Towel Shave · Google Review</div></div></div>
+      <p class="rev-text">"James did my hot towel shave before my wedding and I felt like a new man. The shop is clean, the vibes are right, and every barber here genuinely cares. My whole groomsmen crew books here now."</p>
+      <div class="rev-auth"><div class="av">A</div><div><div class="auth-name">Andre T.</div><div class="auth-meta">Hot Towel Shave · Google Review</div></div></div>
     </div>
     <div class="rev">
       <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
       <p class="rev-text">"Brought my son for his first real haircut and Carlos was incredibly patient with him. Kid walked out smiling ear to ear. We've been coming every month since. This place is family."</p>
-      <div class="rev-author"><div class="avatar">R</div><div><div class="author-name">Rafael G.</div><div class="author-meta">Kids Cut · Google Review</div></div></div>
+      <div class="rev-auth"><div class="av">R</div><div><div class="auth-name">Rafael G.</div><div class="auth-meta">Kids Cut · Google Review</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+
+<section class="sec sec-dark" id="booking">
+  <div class="reveal">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px"><div class="sec-line"></div><span class="sec-tag">Book Your Appointment</span></div>
+    <h2 class="sec-title">Book Your <em>Cut.</em></h2>
+    <p class="sec-sub" style="margin-bottom:40px">Pick your service or go straight to your barber. Confirmation sent instantly by text and email.</p>
+  </div>
+
+  <!-- BOOKING TABS -->
+
+  <div class="booking-tabs reveal">
+    <button class="tab-btn on" onclick="showTab('services')">Pick Your Service</button>
+    <button class="tab-btn" onclick="showTab('barbers')">Pick Your Barber</button>
+  </div>
+
+  <!-- SERVICE MENU TAB -->
+
+  <div class="tab-panel on" id="tab-services">
+    <div class="cal-box">
+      <iframe src="https://api.leadconnectorhq.com/widget/service-menu/69cb2b9f575c601b0f76023c" style="width:100%;border:none;overflow:hidden;min-height:650px;display:block" scrolling="no" id="69cb2b9f575c601b0f76023c_home"></iframe>
+    </div>
+  </div>
+
+  <!-- BARBER SELECT TAB -->
+
+  <div class="tab-panel" id="tab-barbers">
+    <div class="barber-tabs">
+      <div class="barber-tab on" onclick="showBarber('marcus',this)">
+        <img class="btab-img" src="https://images.pexels.com/photos/1453005/pexels-photo-1453005.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="Marcus">
+        <div><div class="btab-name">Marcus Davis</div><div class="btab-role">Fade Specialist</div></div>
+      </div>
+      <div class="barber-tab" onclick="showBarber('james',this)">
+        <img class="btab-img" src="https://images.pexels.com/photos/3998429/pexels-photo-3998429.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="James">
+        <div><div class="btab-name">James Carter</div><div class="btab-role">Beard Specialist</div></div>
+      </div>
+      <div class="barber-tab" onclick="showBarber('carlos',this)">
+        <img class="btab-img" src="https://images.pexels.com/photos/3356170/pexels-photo-3356170.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="Carlos">
+        <div><div class="btab-name">Carlos Rivera</div><div class="btab-role">Classic Cuts</div></div>
+      </div>
+    </div>
+    <div class="barber-cal on cal-box" id="cal-marcus">
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/qainl9wSf76c5vlvtfIt" style="width:100%;border:none;overflow:hidden;min-height:650px;display:block" scrolling="no" id="qainl9wSf76c5vlvtfIt_m"></iframe>
+    </div>
+    <div class="barber-cal cal-box" id="cal-james">
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/i71MaFdAkIVZocNt7nHQ" style="width:100%;border:none;overflow:hidden;min-height:650px;display:block" scrolling="no" id="i71MaFdAkIVZocNt7nHQ_m"></iframe>
+    </div>
+    <div class="barber-cal cal-box" id="cal-carlos">
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/kaYZDlrdS8NM6DQ7TPp0" style="width:100%;border:none;overflow:hidden;min-height:650px;display:block" scrolling="no" id="kaYZDlrdS8NM6DQ7TPp0_m"></iframe>
     </div>
   </div>
 </section>
@@ -423,39 +575,39 @@ nav{padding:0 5%}
 <!-- CTA -->
 
 <section class="cta">
-  <h2 class="cta-title reveal">BOOK YOUR<span>APPOINTMENT.</span></h2>
-  <p class="cta-sub reveal">Choose your barber, pick your service, and lock in your time — all online in under 60 seconds.</p>
-  <a href="booking.html" class="btn-gold reveal" style="display:inline-flex">Book Now <span>→</span></a>
+  <h2 class="cta-title reveal">Book Your<br><em>Appointment.</em></h2>
+  <p class="cta-sub reveal">Pick your barber, choose your service, lock in your time. All online in under 60 seconds.</p>
+  <a href="#booking" class="btn-red reveal" style="display:inline-flex">Book Now <span>→</span></a>
 </section>
 
 <!-- FOOTER -->
 
 <footer>
-  <div class="footer-grid">
+  <div class="foot-grid">
     <div>
-      <span class="f-logo-main">CLEAN <span>CUTS</span></span>
-      <span class="f-logo-sub">Barbershop · Los Angeles · Est. 2018</span>
-      <p class="f-desc">LA's premier barbershop. Precision fades, beard work, and straight razor shaves by barbers who love the craft.</p>
-      <div class="f-social">
-        <a href="#" class="f-soc">IG</a>
-        <a href="#" class="f-soc">FB</a>
-        <a href="#" class="f-soc">G</a>
+      <span class="foot-name"><em>Clean</em> Cuts</span>
+      <span class="foot-loc">Barbershop · Los Angeles · Est. 2018</span>
+      <p class="foot-desc">LA's premier barbershop. Precision fades, beard work, and straight razor shaves by barbers who love the craft.</p>
+      <div class="foot-soc">
+        <a href="#" class="soc-btn">IG</a>
+        <a href="#" class="soc-btn">FB</a>
+        <a href="#" class="soc-btn">G</a>
       </div>
     </div>
     <div>
-      <div class="f-col-title">Navigate</div>
-      <ul class="f-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="team.html">Our Team</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="booking.html">Book Now</a></li>
-        <li><a href="about.html">About</a></li>
+      <div class="foot-col-title">Navigate</div>
+      <ul class="foot-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#booking">Book Now</a></li>
+        <li><a href="#about">About</a></li>
       </ul>
     </div>
     <div>
-      <div class="f-col-title">Hours</div>
-      <ul class="f-links">
+      <div class="foot-col-title">Hours</div>
+      <ul class="foot-links">
         <li><a href="#">Mon: Closed</a></li>
         <li><a href="#">Tue – Fri: 9am – 7pm</a></li>
         <li><a href="#">Saturday: 9am – 5pm</a></li>
@@ -463,71 +615,81 @@ nav{padding:0 5%}
       </ul>
     </div>
     <div>
-      <div class="f-col-title">Contact</div>
-      <div class="f-contact"><a href="tel:8315664767">(831) 566-4767</a></div>
-      <div class="f-contact"><a href="mailto:hello@mojowebsite.com">hello@mojowebsite.com</a></div>
-      <div class="f-contact">1247 S La Brea Ave<br>Los Angeles, CA 90019</div>
-      <div style="margin-top:18px"><a href="booking.html" class="nav-cta" style="display:inline-block;font-size:10px;padding:10px 20px;text-decoration:none">Book Now →</a></div>
+      <div class="foot-col-title">Contact</div>
+      <div class="foot-contact"><a href="tel:8315664767">(831) 566-4767</a></div>
+      <div class="foot-contact"><a href="mailto:hello@mojowebsite.com">hello@mojowebsite.com</a></div>
+      <div class="foot-contact">1247 S La Brea Ave<br>Los Angeles, CA 90019</div>
+      <div style="margin-top:18px"><a href="#booking" class="nav-book" style="display:inline-block;font-size:10px;padding:10px 20px">Book Now →</a></div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="f-copy">© 2026 Clean Cuts Barbershop · Los Angeles, CA · All rights reserved.</div>
-    <div class="f-pow"><a href="https://mojodigitalagency.com">Powered by Mojo Digital Agency</a></div>
+  <div class="foot-bottom">
+    <div class="foot-copy">© 2026 Clean Cuts Barbershop · Los Angeles, CA · All rights reserved.</div>
+    <div class="foot-pow"><a href="https://mojodigitalagency.com">Powered by Mojo Digital Agency</a></div>
   </div>
 </footer>
 
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
 <script>
-// Reveal
+// Reveal on scroll
 const obs = new IntersectionObserver(entries => {
-  entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
+  entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('vis'),i*80); });
 },{threshold:0.07});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 // Mobile menu
-const ham = document.getElementById('ham');
-const mob = document.getElementById('mob');
-ham.addEventListener('click', () => {
+const ham=document.getElementById('ham'),mob=document.getElementById('mob');
+ham.addEventListener('click',()=>{
   mob.classList.toggle('open');
-  const spans = ham.querySelectorAll('span');
+  const s=ham.querySelectorAll('span');
   if(mob.classList.contains('open')){
-    spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
-    spans[1].style.opacity = '0';
-    spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
-  } else {
-    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
-  }
+    s[0].style.transform='rotate(45deg) translate(5px,5px)';
+    s[1].style.opacity='0';
+    s[2].style.transform='rotate(-45deg) translate(5px,-5px)';
+  } else { s.forEach(x=>{x.style.transform='';x.style.opacity='';}); }
 });
 function closeMob(){
   mob.classList.remove('open');
-  ham.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+  ham.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='';});
 }
 
 // Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    const target = document.querySelector(id);
-    if(target){ e.preventDefault(); window.scrollTo({top: target.offsetTop - 76, behavior:'smooth'}); }
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');
+    const t=document.querySelector(id);
+    if(t){e.preventDefault();closeMob();window.scrollTo({top:t.offsetTop-76,behavior:'smooth'});}
   });
 });
 
 // Video switcher
-const videos = [document.getElementById('v1'), document.getElementById('v2'), document.getElementById('v3')];
-const dots = document.querySelectorAll('.hero-dot');
-let current = 0;
+const vids=[document.getElementById('hv1'),document.getElementById('hv2'),document.getElementById('hv3')];
+const dots=document.querySelectorAll('.dot');
+let cur=0;
+function switchVid(idx){
+  vids[cur].style.opacity='0';
+  dots[cur].classList.remove('on');
+  cur=idx;
+  vids[cur].style.opacity='1';
+  dots[cur].classList.add('on');
+}
+setInterval(()=>switchVid((cur+1)%3),8000);
 
-function switchVideo(idx){
-  videos[current].classList.remove('active');
-  dots[current].classList.remove('active');
-  current = idx;
-  videos[current].classList.add('active');
-  dots[current].classList.add('active');
+// Booking tabs
+function showTab(name){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('on'));
+  event.currentTarget.classList.add('on');
+  document.getElementById('tab-'+name).classList.add('on');
 }
 
-// Auto rotate videos every 8 seconds
-setInterval(() => { switchVideo((current + 1) % 3); }, 8000);
+// Barber tabs
+function showBarber(name,el){
+  document.querySelectorAll('.barber-tab').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.barber-cal').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('cal-'+name).classList.add('on');
+}
 </script>
 
 </body>
